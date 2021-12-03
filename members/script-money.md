@@ -8,10 +8,15 @@
 6. *用任意编程语言计算以下公式*
 ![](https://latex.codecogs.com/svg.image?\sum_{n=1}^{100}\left&space;(n^{3}-\sqrt[3]{n}&space;\right&space;))
 
-```C#
-using System;
-using System.Linq;
+```JAVA
+public class Demo {
 
-var sum = Enumerable.Range(1, 100).Select(i => Math.Pow((double)i, 3) - Math.Cbrt(i)).Sum();
-Console.WriteLine(sum); // 25502149.836096782
+    public static double calculate(int limitation){
+        if(limitation > 1){
+            return calculate(limitation - 1) + (Math.pow(limitation, 3) - Math.cbrt(limitation));
+        }else{
+            return 0;
+        }
+    }
+}
 ```
